@@ -1,1 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Christophe Abboud | Mechanical Engineer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0f14;
+            color: #f2f2f2;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(11, 15, 20, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: #b9c0c8;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: white;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 10% 80px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero p:first-child {
+            color: #7db7ff;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: clamp(45px, 7vw, 85px);
+            line-height: 1.05;
+            margin-bottom: 25px;
+        }
+
+        .hero h2 {
+            font-size: clamp(22px, 3vw, 32px);
+            font-weight: normal;
+            color: #b9c0c8;
+            margin-bottom: 25px;
+        }
+
+        .hero-description {
+            max-width: 650px;
+            color: #9da5ae;
+            font-size: 18px;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            padding: 12px 22px;
+            border: 1px solid #4d5966;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .button.primary {
+            background: #f2f2f2;
+            color: #0b0f14;
+            border-color: #f2f2f2;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 100px 10%;
+        }
+
+        .section-title {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            color: #8e98a3;
+            margin-bottom: 45px;
+            max-width: 650px;
+        }
+
+        /* ABOUT */
+
+        .about {
+            max-width: 800px;
+            color: #b9c0c8;
+            font-size: 18px;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project {
+            border: 1px solid #252d36;
+            background: #11161d;
+            padding: 30px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+            border-color: #52606d;
+        }
+
+        .project-number {
+            color: #7db7ff;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .project h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .project p {
+            color: #9da5ae;
+            margin-bottom: 18px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            font-size: 13px;
+            padding: 5px 9px;
+            border: 1px solid #343d47;
+            border-radius: 4px;
+            color: #aeb7c0;
+        }
+
+        /* RESEARCH */
+
+        .research {
+            max-width: 850px;
+        }
+
+        .research-item {
+            padding: 25px 0;
+            border-bottom: 1px solid #252d36;
+        }
+
+        .research-item h3 {
+            margin-bottom: 8px;
+        }
+
+        .research-item p {
+            color: #9da5ae;
+        }
+
+        /* SKILLS */
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-category {
+            background: #11161d;
+            border: 1px solid #252d36;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        .skill-category h3 {
+            margin-bottom: 12px;
+        }
+
+        .skill-category p {
+            color: #9da5ae;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #9da5ae;
+            margin-bottom: 30px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #69737e;
+            border-top: 1px solid #202731;
+        }
+
+        @media (max-width: 700px) {
+
+            nav ul {
+                display: none;
+            }
+
+            section {
+                padding: 75px 7%;
+            }
+
+            .hero {
+                padding: 120px 7% 70px;
+            }
+
+            h1 {
+                font-size: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <div class="logo">CA.</div>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p>MECHANICAL ENGINEER · M2 MARS</p>
+
+            <h1>Christophe<br>Abboud</h1>
+
+            <h2>Mechatronics · Robotics · Artificial Intelligence</h2>
+
+            <p class="hero-description">
+                Mechanical engineer interested in intelligent robotic systems,
+                collaborative robotics, and technologies that improve people's lives.
+            </p>
+
+            <div class="buttons">
+
+                <a class="button primary" href="#projects">
+                    View my projects
+                </a>
+
+                <a class="button" href="#contact">
+                    Contact me
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <h2 class="section-title">About Me</h2>
+
+        <p class="section-subtitle">
+            Mechanical engineering background with a growing focus on robotics,
+            mechatronics and artificial intelligence.
+        </p>
+
+        <div class="about">
+
+            <p>
+                I am a Mechanical Engineer currently pursuing an M2 in
+                Mechatronics, Artificial Intelligence and Robotic Systems
+                at Sorbonne University.
+            </p>
+
+            <br>
+
+            <p>
+                My interests lie at the intersection of mechanical design,
+                robotics, sensing and intelligent systems. I particularly enjoy
+                developing technologies that can interact with and assist people,
+                with a strong interest in healthcare and rehabilitation applications.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <h2 class="section-title">Selected Projects</h2>
+
+        <p class="section-subtitle">
+            A selection of engineering, robotics and research projects.
+        </p>
+
+        <div class="projects">
+
+
+            <div class="project">
+
+                <div class="project-number">01 · ROBOTICS / HEALTHCARE</div>
+
+                <h3>Wearable Rehabilitation Device</h3>
+
+                <p>
+                    Development of a 3D-printable wearable rehabilitation device
+                    combining soft pneumatic sensing with augmented reality
+                    for physical rehabilitation.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Soft Robotics</span>
+                    <span class="tag">3D Printing</span>
+                    <span class="tag">Sensors</span>
+                    <span class="tag">AR</span>
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-number">02 · RESEARCH / MANUFACTURING</div>
+
+                <h3>Piezoelectric Micro-Surface Texturing</h3>
+
+                <p>
+                    Development of a piezo-actuated ultrasonic machining system
+                    for micro-surface texturing, combined with vision-based
+                    neural network quality assessment.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Piezo Actuation</span>
+                    <span class="tag">CNC</span>
+                    <span class="tag">Machine Learning</span>
+                    <span class="tag">Manufacturing</span>
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-number">03 · ROBOTICS / CONTROL</div>
+
+                <h3>Robotic Manipulator Control</h3>
+
+                <p>
+                    Study and implementation of mathematical models and control
+                    methods for robotic manipulators as part of my M2 studies.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Robotics</span>
+                    <span class="tag">Control</span>
+                    <span class="tag">Kinematics</span>
+                    <span class="tag">MATLAB</span>
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-number">04 · FUTURE PROJECT</div>
+
+                <h3>More Projects Coming</h3>
+
+                <p>
+                    New robotics, artificial intelligence and mechatronics
+                    projects will be added here throughout my M2 studies.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Robotics</span>
+                    <span class="tag">AI</span>
+                    <span class="tag">Mechatronics</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- RESEARCH -->
+
+    <section id="research">
+
+        <h2 class="section-title">Research</h2>
+
+        <p class="section-subtitle">
+            Research experience in advanced manufacturing, robotics and intelligent systems.
+        </p>
+
+        <div class="research">
+
+            <div class="research-item">
+
+                <h3>
+                    Piezo device for micro-texturing surfaces with
+                    vision-based neural network quality assessment
+                </h3>
+
+                <p>
+                    Research publication · Science Progress · 2026
+                </p>
+
+            </div>
+
+
+            <div class="research-item">
+
+                <h3>
+                    Tool Design for Micro-Machining Using a Piezo-Actuated System
+                </h3>
+
+                <p>
+                    Research presented at the 18th HSM Conference, Metz.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <h2 class="section-title">Skills</h2>
+
+        <p class="section-subtitle">
+            Engineering and technical skills developed through academic,
+            research and practical projects.
+        </p>
+
+        <div class="skills">
+
+
+            <div class="skill-category">
+
+                <h3>Mechanical Engineering</h3>
+
+                <p>
+                    Mechanical Design<br>
+                    CAD<br>
+                    Manufacturing<br>
+                    CNC<br>
+                    3D Printing
+                </p>
+
+            </div>
+
+
+            <div class="skill-category">
+
+                <h3>Robotics</h3>
+
+                <p>
+                    Robot Kinematics<br>
+                    Manipulator Control<br>
+                    Mechatronics<br>
+                    Sensors & Actuators
+                </p>
+
+            </div>
+
+
+            <div class="skill-category">
+
+                <h3>Programming & AI</h3>
+
+                <p>
+                    Python<br>
+                    MATLAB<br>
+                    C/C++<br>
+                    Machine Learning<br>
+                    Computer Vision
+                </p>
+
+            </div>
+
+
+            <div class="skill-category">
+
+                <h3>Engineering Tools</h3>
+
+                <p>
+                    SolidWorks<br>
+                    MATLAB / Simulink<br>
+                    CAD / CAE Tools<br>
+                    Experimental Testing
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <div class="contact">
+
+            <h2 class="section-title">Let's Connect</h2>
+
+            <p>
+                Interested in robotics, mechatronics, intelligent systems,
+                or potential collaboration?
+            </p>
+
+            <div class="buttons" style="justify-content:center;">
+
+                <a class="button primary"
+                   href="mailto:YOUR_EMAIL@example.com">
+                    Email me
+                </a>
+
+                <a class="button"
+                   href="https://www.linkedin.com/"
+                   target="_blank">
+                    LinkedIn
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 Christophe Abboud · Mechanical Engineer
+
+    </footer>
+
+</body>
+</html>

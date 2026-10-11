@@ -1,1 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="none">
+  <g stroke="#7db7ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.55">
 
+    <!-- Base -->
+    <path d="M125 420 H245 L265 455 H105 Z"/>
+    <rect x="150" y="395" width="70" height="25" rx="5"/>
+
+    <!-- Shoulder -->
+    <circle cx="185" cy="365" r="37"/>
+    <circle cx="185" cy="365" r="18"/>
+
+    <!-- Lower arm -->
+    <path d="M166 330 L255 235 L289 264 L207 390 Z"/>
+
+    <!-- Elbow -->
+    <circle cx="273" cy="247" r="31"/>
+    <circle cx="273" cy="247" r="13"/>
+
+    <!-- Upper arm -->
+    <path d="M285 218 L352 120 L386 146 L305 268 Z"/>
+
+    <!-- Wrist -->
+    <circle cx="370" cy="132" r="22"/>
+    <circle cx="370" cy="132" r="9"/>
+
+    <!-- Gripper -->
+    <path d="M382 114 L415 88"/>
+    <path d="M415 88 L440 90 L449 72"/>
+    <path d="M415 88 L420 62 L441 51"/>
+
+    <!-- Technical details -->
+    <path d="M185 365 L273 247 L370 132" stroke-dasharray="5 8" opacity="0.5"/>
+    <circle cx="185" cy="365" r="49" stroke-dasharray="4 9" opacity="0.3"/>
+    <circle cx="273" cy="247" r="43" stroke-dasharray="4 9" opacity="0.3"/>
+
+  </g>
+</svg>

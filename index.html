@@ -327,6 +327,54 @@
                 font-size: 50px;
             }
         }
+        
+/* ABOUT HIGHLIGHT CARDS */
+
+.about-highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 40px;
+}
+
+.highlight-card {
+    background: #11161d;
+    border: 1px solid #252d36;
+    border-radius: 8px;
+    padding: 22px;
+    transition: 0.3s ease;
+}
+
+.highlight-card h3 {
+    color: #7db7ff;
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.highlight-card p {
+    color: #b9c0c8;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.highlight-card:hover {
+    transform: translateY(-4px);
+    border-color: #7db7ff;
+}
+
+@media (max-width: 800px) {
+    .about-highlights {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .about-highlights {
+        grid-template-columns: 1fr;
+    }
+}
+
     </style>
 </head>
 

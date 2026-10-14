@@ -367,6 +367,22 @@
 
 .highlight-card {
     align-self: start;
+    position: relative;
+}
+
+.expand-icon {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    color: #7db7ff;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+
+.highlight-card:hover .expand-icon {
+    transform: rotate(45deg);
 }
 
 .highlight-tooltip {
@@ -508,6 +524,7 @@
 <div class="about-highlights">
 
     <div class="highlight-card">
+    <span class="expand-icon">+</span>
     <h3>3.97/4.00</h3>
     <p>LAU CGPA · High Distinction</p>
 

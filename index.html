@@ -362,7 +362,44 @@
     transform: translateY(-4px);
     border-color: #7db7ff;
 }
+/* HOVER TOOLTIP */
 
+.highlight-card {
+    position: relative;
+}
+
+.highlight-tooltip {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translate(-50%, 8px);
+
+    width: 280px;
+    max-width: 90vw;
+    padding: 15px;
+
+    background: #172331;
+    border: 1px solid #405b7b;
+    border-radius: 8px;
+
+    color: #e1e7ee;
+    font-size: 13px;
+    line-height: 1.6;
+    text-align: left;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.25s ease;
+
+    z-index: 20;
+    pointer-events: none;
+}
+
+.highlight-card:hover .highlight-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
 @media (max-width: 800px) {
     .about-highlights {
         grid-template-columns: repeat(2, 1fr);

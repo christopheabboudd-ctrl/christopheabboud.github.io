@@ -197,6 +197,113 @@
 }
 
         /* PROJECTS */
+        
+/* PROJECT FILTER BUTTONS */
+
+.project-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.filter-btn {
+    background: #11161d;
+    color: #b9c0c8;
+    border: 1px solid #343d47;
+    padding: 11px 18px;
+    border-radius: 25px;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    border-color: #7db7ff;
+    color: #7db7ff;
+}
+
+.filter-btn.active {
+    background: #7db7ff;
+    color: #0b0f14;
+    border-color: #7db7ff;
+    font-weight: 600;
+}
+        /* PROJECT GRID */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    position: relative;
+}
+        /* PROJECT CARD DESIGN */
+
+.project-card {
+    position: relative;
+    background: #11161d;
+    border: 1px solid #252d36;
+    border-radius: 12px;
+    overflow: hidden;
+    min-height: 320px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.project-card:hover {
+    border-color: #7db7ff;
+}
+
+.project-image {
+    width: 100%;
+    height: 220px;
+    background: #19232e;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 22px;
+    position: relative;
+}
+
+.project-category {
+    display: block;
+    color: #7db7ff;
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.project-info h3 {
+    color: #f2f2f2;
+    font-size: 21px;
+    line-height: 1.3;
+    padding-right: 25px;
+}
+
+.project-expand {
+    position: absolute;
+    right: 22px;
+    bottom: 22px;
+    color: #7db7ff;
+    font-size: 25px;
+}
+
+/* MOBILE LAYOUT */
+
+@media (max-width: 700px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 
         .projects {
             display: grid;
@@ -626,105 +733,71 @@ hyphens: auto;
     </section>
 
 
-    <!-- PROJECTS -->
+<!-- PROJECTS -->
 
-    <section id="projects">
+<section id="projects">
 
-        <h2 class="section-title">Selected Projects</h2>
+    <h2 class="section-title">Selected Projects</h2>
 
-        <p class="section-subtitle">
-            A selection of engineering, robotics and research projects.
-        </p>
+    <p class="section-subtitle">
+        Explore my work in robotics, mechatronics,
+        automation, artificial intelligence, and mechanical design.
+    </p>
 
-        <div class="projects">
+  <!-- PROJECT FILTERS -->
 
-            <div class="project">
+<div class="project-filters">
 
-                <div class="project-number">01 · ROBOTICS / HEALTHCARE</div>
+    <button class="filter-btn active" data-filter="all">
+        All Projects
+    </button>
 
-                <h3>Wearable Rehabilitation Device</h3>
+    <button class="filter-btn" data-filter="robotics">
+        Robotics &amp; Mechatronics
+    </button>
 
-                <p>
-                    Development of a 3D-printable wearable rehabilitation device
-                    combining soft pneumatic sensing with augmented reality
-                    for physical rehabilitation.
-                </p>
+    <button class="filter-btn" data-filter="automation">
+        Control &amp; Automation
+    </button>
 
-                <div class="tags">
-                    <span class="tag">Soft Robotics</span>
-                    <span class="tag">3D Printing</span>
-                    <span class="tag">Sensors</span>
-                    <span class="tag">AR</span>
-                </div>
+    <button class="filter-btn" data-filter="ai">
+        AI &amp; Machine Learning
+    </button>
 
-            </div>
+    <button class="filter-btn" data-filter="mechanical">
+        Mechanical Design &amp; CFD
+    </button>
 
+</div>
 
-            <div class="project">
+<!-- PROJECT GRID -->
 
-                <div class="project-number">02 · RESEARCH / MANUFACTURING</div>
+<div class="project-grid">
 
-                <h3>Piezoelectric Micro-Surface Texturing</h3>
+<!-- PROJECT 01: BLINKER -->
 
-                <p>
-                    Development of a piezo-actuated ultrasonic machining system
-                    for micro-surface texturing, combined with vision-based
-                    neural network quality assessment.
-                </p>
+<div class="project-card"
+     data-category="robotics automation">
 
-                <div class="tags">
-                    <span class="tag">Piezo Actuation</span>
-                    <span class="tag">CNC</span>
-                    <span class="tag">Machine Learning</span>
-                    <span class="tag">Manufacturing</span>
-                </div>
+    <div class="project-image">
+        <img src="blinker.jpg" alt="Blinker assistive navigation robot">
+    </div>
 
-            </div>
+    <div class="project-info">
+        <span class="project-category">
+            ROBOTICS &amp; MECHATRONICS
+        </span>
 
+        <h3>Blinker — Assistive Navigation Robot</h3>
 
-            <div class="project">
+        <span class="project-expand">+</span>
+    </div>
 
-                <div class="project-number">03 · ROBOTICS / CONTROL</div>
+</div>
 
-                <h3>Robotic Manipulator Control</h3>
+</div>
 
-                <p>
-                    Study and implementation of mathematical models and control
-                    methods for robotic manipulators as part of my M2 studies.
-                </p>
-
-                <div class="tags">
-                    <span class="tag">Robotics</span>
-                    <span class="tag">Control</span>
-                    <span class="tag">Kinematics</span>
-                    <span class="tag">MATLAB</span>
-                </div>
-
-            </div>
-
-
-            <div class="project">
-
-                <div class="project-number">04 · FUTURE PROJECT</div>
-
-                <h3>More Projects Coming</h3>
-
-                <p>
-                    New robotics, artificial intelligence and mechatronics
-                    projects will be added here throughout my M2 studies.
-                </p>
-
-                <div class="tags">
-                    <span class="tag">Robotics</span>
-                    <span class="tag">AI</span>
-                    <span class="tag">Mechatronics</span>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
+</section>
 
 
     <!-- RESEARCH -->

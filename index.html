@@ -1151,5 +1151,43 @@ hyphens: auto;
         © 2026 Christophe Abboud · Mechanical Engineer
     </footer>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const projectCards = document.querySelectorAll(".project-card");
+
+    filterButtons.forEach(button => {
+        button.addEventListener("click", function () {
+
+            const selectedFilter = this.dataset.filter;
+
+            filterButtons.forEach(btn => {
+                btn.classList.remove("active");
+            });
+
+            this.classList.add("active");
+
+            projectCards.forEach(card => {
+
+                const categories = card.dataset.category.split(" ");
+
+                if (
+                    selectedFilter === "all" ||
+                    categories.includes(selectedFilter)
+                ) {
+                    card.style.display = "";
+                } else {
+                    card.style.display = "none";
+                }
+
+            });
+
+        });
+    });
+
+});
+</script>
+
 </body>
 </html>

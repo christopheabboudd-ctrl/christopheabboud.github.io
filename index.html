@@ -320,9 +320,15 @@
 .project-expand {
     position: absolute;
     right: 22px;
-    bottom: 22px;
+    top: 18px;
     color: #7db7ff;
     font-size: 25px;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-expand {
+    transform: rotate(45deg);
 }
         .project-details {
     max-height: 0;

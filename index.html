@@ -324,6 +324,26 @@
     color: #7db7ff;
     font-size: 25px;
 }
+        .project-details {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.project-card:hover .project-details {
+    max-height: 250px;
+    opacity: 1;
+    margin-top: 18px;
+}
+
+.project-details p {
+    color: #b9c0c8;
+    font-size: 14px;
+    line-height: 1.7;
+    text-align: justify;
+    hyphens: auto;
+}
 
 /* MOBILE LAYOUT */
 

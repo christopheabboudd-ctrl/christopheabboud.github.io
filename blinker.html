@@ -94,6 +94,38 @@
     text-align: justify;
     hyphens: auto;
 }
+        
+/* PROJECT SECTION NAVIGATION */
+
+.project-nav {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    padding: 18px 5%;
+    background: rgba(11, 15, 20, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #252d36;
+
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.project-nav a {
+    color: #aeb7c0;
+    font-size: 13px;
+    transition: color 0.3s ease;
+}
+
+.project-nav a:hover {
+    color: #7db7ff;
+}
+
     </style>
 </head>
 
@@ -107,6 +139,20 @@
         ← Back to Projects
     </a>
 </header>
+
+<!-- PROJECT SECTION NAVIGATION -->
+
+<nav class="project-nav">
+
+    <a href="#overview">Overview</a>
+    <a href="#mechanical">Mechanical Design</a>
+    <a href="#electronics">Electronics</a>
+    <a href="#leash">Leash & Interaction</a>
+    <a href="#software">Software & Control</a>
+    <a href="#manufacturing">Manufacturing</a>
+    <a href="#testing">Testing & Results</a>
+
+</nav>
 
 <!-- PROJECT HERO -->
 

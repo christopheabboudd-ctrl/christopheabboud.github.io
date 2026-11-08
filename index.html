@@ -267,19 +267,36 @@
     transform-origin: right top;
 }
 
+tep 51 — Adjust the image proportions
+In index.html, find your .project-image CSS and replace it with:
 .project-image {
+    position: relative;
     width: 100%;
-    height: 220px;
-    background: #19232e;
+    height: 360px;
+    background: #11161d;
     overflow: hidden;
+    isolation: isolate;
+}
+
+.project-image::before {
+    content: "";
+    position: absolute;
+    inset: -12px;
+    background-image: url("blinker.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(14px);
+    opacity: 0.65;
+    z-index: -1;
 }
 
 .project-image img {
+    display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
 }
-
         /* PROJECT IMAGE PLACEHOLDER */
 
 .project-placeholder {

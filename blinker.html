@@ -126,6 +126,7 @@
     color: #7db7ff;
 }
 
+
 /* PROJECT CONTENT SECTIONS */
 
 .project-section {
@@ -141,7 +142,10 @@
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 2px;
-    margin-bottom: 22
+    margin-bottom: 22px;
+    padding-left: 0;
+    border-left: none;
+}
 
 .project-section h2 {
     color: #f2f2f2;
@@ -173,7 +177,7 @@
     text-align: justify;
 }
 
-/* IMAGE PLACEHOLDERS */
+/* TECHNICAL IMAGE PLACEHOLDERS */
 
 .project-media {
     width: 100%;
@@ -185,9 +189,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #7db7ff;
-    
-/* TECHNICAL IMAGE PLACEHOLDERS */
+    overflow: hidden;
+}
 
 .media-placeholder {
     width: 100%;
@@ -220,11 +223,11 @@
     font-size: 13px;
 }
 
-}
+/* MOBILE LAYOUT */
 
 @media (max-width: 700px) {
     .project-section {
-        padding: 55px 6%;
+        padding: 40px 6% 55px;
     }
 }
 
@@ -308,10 +311,6 @@
         descending them.
     </p>
 
-    <!-- MAIN CAD IMAGE -->
-    <div class="project-media">
-        <!-- SOLIDWORKS RENDERING WILL GO HERE -->
-    </div>
 
     <h3>Six-Wheel Stair-Climbing Architecture</h3>
 
